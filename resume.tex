@@ -1,0 +1,253 @@
+\documentclass[letterpaper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{scrextend}
+
+%\usepackage{showframe} % debugging use only
+
+\geometry{
+  letterpaper,
+  left = 0.2in,
+  right = 0.2in,
+  top = 0.2in,
+  bottom = 0.2in
+}
+
+\hypersetup{
+  colorlinks = true, 
+  linkcolor = blue, 
+  urlcolor  = blue,
+  citecolor = blue, 
+  anchorcolor = blue
+}
+
+%   CUSTOM STYLES  %
+\thispagestyle{empty} % remove page number
+\titleformat{\section}{
+  \vspace{-5pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule\vspace{-5pt}]
+
+%   MACROS  %
+\newcommand{\sectionStart}{
+  \begin{itemize}[label={},leftmargin=0in]
+}
+\newcommand{\sectionEnd}{
+  \end{itemize}
+}
+\newcommand{\head}[9]{
+  \noindent
+  \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+    \centerline{
+      \textbf{\href{#1}{\color{black}{\LARGE {\underline{#2}}}}}
+    }
+    \vspace{5pt}\\
+    \centerline{
+      \href{mailto:#3}{\underline{#3}} $\mid$
+      #4 $\mid$
+      #5 : \href{#6}{\underline{#7}} $\mid$
+      #8 : \href{#9}{\underline{#7}}
+    }
+  \end{tabular*}
+  \vspace{-10pt}
+}
+\newcommand{\summaryText}[1]{
+  \item
+  \begin{addmargin}[7pt]{0pt}
+    {#1}
+  \end{addmargin}
+}
+\newcommand{\educationItem}[5]{
+  \vspace{-1pt}
+  \item
+  \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r@{}}
+    {#1  \textbf{#2}}  & {#3}\\
+    {\textit{#4}} & {#5}\\\vspace{-18pt}
+  \end{tabular*}
+  \vspace{-5pt}
+}
+\newcommand{\skillItem}[2]{
+  \vspace{-1pt}
+  \item
+  \begin{tabular*}{1.0\textwidth}{l@{}l@{}}
+    {\textbf{#1}: } & {#2}
+  \end{tabular*}\vspace{-17pt}
+}
+\newcommand{\jobHeading}[3]{
+  \vspace{-1pt}
+  \item
+  \begin{tabular*}{1.0\textwidth}{l@{\extracolsep{\fill}}r@{}}
+    \normalsize{\textbf{#1}} & #2 \\
+    \textit{\small#3} \\
+  \end{tabular*}\vspace{-5pt}
+}
+\newcommand{\projectHeading}[4]{
+  \vspace{-1pt}
+  \item
+  \begin{tabular*}{1.0\textwidth}{l@{\extracolsep{\fill}}r@{}}
+    \normalsize{{\href{#1}{#2}} \textbf{#3}} & #4 \\
+  \end{tabular*}\vspace{-5pt}
+}
+\newcommand{\listStart}{\begin{itemize}}
+\newcommand{\listEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\bulletItem}[1]{
+  \item
+  \small{
+    {#1 \vspace{-1.8pt}}
+  }
+}
+
+\begin{document}
+
+%   HERO   %
+\head
+  {http://prashantrawal.in}
+  {Prashant Rawal}
+  {pr4web1@gmail.com}
+  {+91 7587404044}
+  {Github}
+  {https://github.com/PrashantPR7}
+  {Prashant}
+  {LinkedIn}
+  {https://www.linkedin.com/in/prashant-rawal-12142b117/}
+   {DOB - }
+  {31-08-1995}
+
+%   SUMMARY   %
+\section{Summary}
+\sectionStart
+  \summaryText
+  {I'm a 24 year old full-stack developer who has experience building and scaling web applications and services in various domains.I'm also passionate about open source, i like to work in high impact environments with passionate people, and helping growing development teams build great products.}
+\sectionEnd
+
+%   EDUCATION   %
+\section{Education}
+\sectionStart
+ \educationItem
+    {Bootcamp from} 
+    {FrontendMasters} 
+    {2018(august)-2019(december)}
+    {modern fullstack engineering courses from tech-experts [Minneapolis, MN]} 
+    {}
+ \educationItem
+    {MadeEasy} 
+    {} 
+    {2017(july)-2018(february)}
+    { [bhopal, madhyaPradesh ]} 
+    {}
+  \educationItem
+    {Bachelor of engineering} 
+    {Computer Science} 
+    {2013-2017}
+    {chhattisgarh swami vivekananda technical University [durg,chhattisgarh ]} 
+    {cpi 7.16/10.0}
+     \educationItem
+    {12th } 
+    {} 
+    {2013}
+    {DDM Public School ,{cbse}, [korba,chhattisgarh ]} 
+    {cgpa 7.0/10.0}
+    \educationItem
+    {10th } 
+    {} 
+    {2011}
+    {DDM Public School ,{cbse}, [korba,chhattisgarh ]} 
+    { cgpa 8.6/10.0}
+\sectionEnd
+
+%   SKILLS   %
+\section{Technical Skills}
+\sectionStart
+  \skillItem
+    {Languages}
+    {JavaScript (ES6), Node.js, HTML5, CSS3, C }
+  \skillItem
+    {Frameworks}
+    {Gatsby.js ,Express.js}
+     \skillItem
+    {Libraries}
+        {React.js, Jest(testing) ,React-RouterV5, Bootstrap,
+    Semantic-ui, material-ui, styled-components, emotionjs}
+    \skillItem
+    {Database}
+        {MongoDB(proficient),MySQL,Firebase}
+    \skillItem
+    {Learning}
+        {GraphQL, Electron.js}
+  \skillItem
+    {Tools}
+    { Vs-Code, Redux, Webpack, Babel, adobe XD ,Bash, Git, Gulp, \LaTeX\ }
+  \vspace{3pt}
+\sectionEnd
+
+%   PROJECTS   %
+\section{Projects}
+\sectionStart
+  \projectHeading
+    {https://github.com/PRASHANTPR7/catch-Up}
+    {catchUp}
+    {(React.js, Redux and Firebase)}
+    {November 2019 - Present}
+  \listStart
+    \bulletItem
+      {web appication to create a meetups and events accross india. its my side-Project ('under-production') but feel free to check the code}
+  \listEnd
+  \projectHeading
+    {https://letsbattle.netlify.com }
+    {Battle-Of-Github}
+    {(React.js , React-Routerv4)}
+    {}
+  \listStart
+    \bulletItem
+      {fun application but extensively uses react core concepts and github api. if you are developer you will love it. try it}
+    
+  \listEnd
+  \projectHeading
+    {https://pickyourcolor.netlify.com/}
+    {PickYourColor}
+    {(React.js, Chroma.js) }
+    {}
+  \listStart
+    \bulletItem
+      {pickYourColors and make a palette full of colors for your upcoming project, tired to figure our what to choose between rgb rgba hex ? this app will help you }
+    \bulletItem
+      {inspired from application like material ui color}
+  \listEnd
+  \projectHeading
+    {https://forecast-in-seconds.herokuapp.com/}
+    {ForecastInSeconds}
+    {(node.js ,mapbox-api and darksky-api)}
+    {}
+  \listStart
+    \bulletItem
+      {know your area weather in seconds.}
+  \listEnd
+\sectionEnd
+  
+%   EXPERIENCE   %
+\section{achievements/certifications}
+\sectionStart
+  \jobHeading
+    {Path to be a MongoDB Expert}
+    {}
+    {mongoDB university , newyork}
+  \listStart
+    \bulletItem
+    {completed all the courses provided by the mongoDB university like mongoDB basics, MongoDB aggregation framework, cluster administration, mongoDB for javaScript Developer, mongoDB security  }
+  \listEnd
+   \jobHeading
+    {Gate Qualified- 2018}
+    {}
+    {}
+    \jobHeading
+    {AIR-649 -N.I.E.L.I.T}
+  \listStart
+    \bulletItem
+    {exam to be a scientist conducted by govt of india through national institute of electronics and information technology }
+  \listEnd
+\sectionEnd
+
+
+\end{document}
